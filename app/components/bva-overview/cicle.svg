@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" fill="none">
+  <g filter="url(#filter0_i_429_1229)">
+    <path d="M88 44C88 68.3005 68.3005 88 44 88C19.6995 88 0 68.3005 0 44C0 19.6995 19.6995 0 44 0C68.3005 0 88 19.6995 88 44ZM12.3267 44C12.3267 61.4927 26.5073 75.6733 44 75.6733C61.4927 75.6733 75.6733 61.4927 75.6733 44C75.6733 26.5073 61.4927 12.3267 44 12.3267C26.5073 12.3267 12.3267 26.5073 12.3267 44Z" fill="#E0E0E0"/>
+  </g>
+  <defs>
+    <filter id="filter0_i_429_1229" x="0" y="0" width="88" height="91" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect1_innerShadow_429_1229"/>
+      <feOffset dy="3"/>
+      <feGaussianBlur stdDeviation="1.5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/>
+      <feBlend mode="normal" in2="shape" result="effect1_innerShadow_429_1229"/>
+    </filter>
+  </defs>
+</svg>

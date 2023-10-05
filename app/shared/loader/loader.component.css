@@ -1,0 +1,24 @@
+.spinner {
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    /* border: 5px solid rgba(0, 0, 0, .1); */
+    border-left: 5px solid #FF4801;
+    border-right: 10px solid hsl(17, 79%, 58%);
+    animation: spinner 1s linear infinite forwards;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg)
+    }
+    
+    100% {
+        transform: rotate(360deg)
+    }
+}

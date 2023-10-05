@@ -1,0 +1,104 @@
+<section class="py-5">
+    <div class="row">
+        <div class="col-8 pe-5">
+            <h1 class="border-bottom pb-4">Credit</h1>
+            <div class="brands py-4">
+                <div class="row">
+                    <div class="col-4 py-3">
+                        <img src="assets/icons/World_Wide_Technology 1.svg" alt="">
+                    </div>
+                    <div class="col-4 py-3">
+                        <img src="assets/icons/ATEX_BIG-30d1d347 1.svg" alt="">
+                    </div>
+                    <!-- <div class="col-4 py-3">
+                        <img src="assets/icons/Ericsson-logo 1.svg" alt="">
+                    </div> -->
+                    <div class="col-4 py-3">
+                        <img src="assets/icons/NOK_BIG-8604230c 1.svg" alt="">
+                    </div>
+                    <div class="col-4 py-3">
+                        <img src="assets/icons/burnsmcdonnell_blog 1.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="roi shadow p-4 sticky-top">
+                <h3>Return on<br> Investment (ROI)</h3>
+                <h2>{{data.returnOfinvestDis}}%</h2>
+                <div class="col-7 mt-5 img_cls1" *ngIf="data.D70!=data.expectedDevice">
+                    <div class="verticalLine">
+                        <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions">
+                        </highcharts-chart>
+                        <hr style="width: 275px;" />
+                        <span class="span2" *ngIf="data.returnOfinvestDis<=300">100%</span>
+                        <span class="span2" *ngIf="data.returnOfinvestDis>300">300%</span>
+                      <span class="span22">{{data.returnOfinvestDis}}%</span>
+                      <span class="span233">{{data5Y.returnOfinvestDis5Y}}%</span>                      
+                      <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=400">600%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=600">800%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=800">1000%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y<400">400%</span>
+                        <span class="span1">{{ ''| datePipe }}</span>
+                        <span class="span3">{{ (''| datePipe)+1 }}</span>
+                        <span class="span4">{{ (''| datePipe)+2 }}</span>
+                        <span class="span5">{{ (''| datePipe)+3 }}</span>
+                        <span class="span6">{{ (''| datePipe)+4 }}</span>
+                        <span class="span7">{{ (''| datePipe)+5  }}</span>
+                
+                      </div>
+                      </div>
+                      <br/>
+                <div>
+                    <img class="rounded  w-100" src="assets/icons/pdf-paper.png" alt="">
+                </div>
+                <div class=" pdf-download d-flex justify-content-between align-items-center pt-3" >
+                    <span class="text-secondary" style="cursor: pointer;"><img src="assets/icons/pdf.svg" width="24" alt=""> PDF Summary</span>
+                    <span><a type="button" class="text-uppercase text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-target="#exampleModal">Send Report</a></span>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        
+        <!-- Modal -->
+        <!-- <div class="send-report">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body p-0">
+                  <div class="row">
+                    <div class="col-md-6 p-4 ">
+                        <div class="d-flex gap-2 mb-5 align-items-cener px-3">
+                            <img src="assets/icons/pdf.svg" class="" width="30" alt="" />
+                            <h4 class="mb-0">Send PDF Report</h4>
+                        </div>
+                        <form class="pt-3 px-3" action="" method="get">
+                            <div class="mb-3">
+                              <label for="email" class="form-label">Email address:</label>
+                              <input type="email" class="form-control" id="email" placeholder="Enter Your Email " required="required">
+                            </div>
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Company Name:</label>
+                                <input type="text" class="form-control" id="company" placeholder="Type company name...">
+                              </div>
+                              <div class="mb-3">
+                                <label class="picture" for="picture__input" tabIndex="0">
+                                    <span class="picture__image">Drop Logo Here or &nbsp;</span>
+                                    <span>choose file</span>
+                                  </label>
+                                <input type="file" class="form-control" id="picture__input">
+                              </div>
+                            <button type="submit" class="btn btn-primary w-100 border-0">Submit</button>
+                          </form>
+                    </div>
+                    <div class="col-md-6 p-0 report-img">   
+                        <button type="button" class="btn-close float-end p-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div> -->
+</section>

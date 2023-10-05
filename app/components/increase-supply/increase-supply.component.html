@@ -1,0 +1,164 @@
+<section class="py-5">
+  <div class="row">
+    <div class="col-8 pe-5">
+      <div>
+        <h1>3. Increase Supply Chain Speed Efficiency</h1>
+        <p>
+          Cellular networks are often comprised of many small and specialized devices, complicating supply chain and
+          inventory management. OneLayer’s advanced device discovery and fingerprinting capabilities make it easy to see
+          where specific devices are deployed and implement cost-effective and efficient spare parts inventory and
+          deployment strategies.
+        </p>
+      </div>
+      <div class="bg1 px-5 py-4 p-4 mb-3">
+        <span class="text-uppercase fw-bold mb-4 d-block">Business Impact</span>
+        <p>Reduces asset management cost and complexity.</p>
+        <p>Minimizes inventory costs by maintaining optimal device and parts volume in suitable locations.</p>
+        <p>Reduces costs through vendor consolidation and greater purchasing power with strategic vendors.</p>
+      </div>
+
+      <div class="content my-5">
+        <h4 class="mb-3">3.1 &nbsp; Asset Management / Improved Inventory Management</h4>
+        <p>3.1.1&nbsp; Enterprises’ private cellular networks, in most cases, include many IoT and other devices,
+          complicating asset and inventory management. </p>
+        <p>3.1.2 &nbsp; With OneLayer’s advanced device visibility and fingerprinting capabilities, you’ll see where
+          specific devices are located and their status and implement efficient inventory strategies.</p>
+        <p>OneLayer product provides the following capabilities and value, and much more:</p>
+        <ul class="ms-5">
+          <li>OneLayer’s solution provides real-time information about all components’ existence and location. If they
+            are transmitting, etc. It helps organizations understand how many spare parts they should hold. Today this
+            data is gathered manually, which takes much longer and costs much more.</li>
+          <li>NBA that might solve some of these use cases would be SIM management solutions. But it would lack the
+            device fingerprint capability - so organizations would need to develop that in-house potentially – which
+            might be a challenge as there are no existing market solutions today.</li>
+          <li>OneLayer solution reduces asset management cost and complexity</li>
+          <li>OneLayer’s solution provides reports on the quality of service and uptime of end devices and gets it on
+            the vendor level to enable A/B testing.</li>
+          <li>OneLayer’s report can provide a forecast about inventory replacement time, etc.</li>
+        </ul>
+        <p>3.1.3 &nbsp; To quantify these capabilities’ value, we used a formula, looking at a security budget of an
+          organization for securing its private cellular network. And the specific budget parts related to relevant
+          security infrastructure.</p>
+
+      </div>
+      <div class="bg2 p-5 mb-3">
+        <p class="fw-bold">Last, we defined the saving associated with OneLayer’s solution (% Year) or the % of the
+          calculated NBA that can be saved using OneLayer’s solution.
+          For this measurement (3.1), we estimate the savings that can be contributed to OneLayer’s solution, by
+          providing real-time information about all components’ activity and location, and reports on the QoS and
+          uptime. (Other parts are covered by the customer’s existing security tools and services, and by some other
+          components of the private cellular ecosystem).</p>
+      </div>
+
+      <div class="content my-5">
+        <h4 class="mb-3">3.2 &nbsp; Minimized Sunk Material Cost</h4>
+        <p>3.2.1 &nbsp; The pain: Inventory costs encompass all the expenses associated with ordering, holding, and
+          managing the inventory. Inventory costs are one of the most important metrics to consider to keep your company
+          profitable.</p>
+        <p>3.2.2 &nbsp; With OneLayer’s solution, you’ll be able to identify and eliminate redundant devices and
+          minimize inventory costs.</p>
+        <p>OneLayer product provides the following capabilities and value, and much more:</p>
+        <ul class="ms-5">
+          <li>Remove redundant components, eliminate unnecessary devices</li>
+          <li>Minimizes inventory costs by maintaining optimal device and parts volume in suitable locations enabling
+            supplier economies of scale - by removing redundant suppliers, we can get economies of scale from fewer
+            suppliers and improve cost savings. Greater purchasing power with strategic vendors.</li>
+          <li>Increased Energy Savings: Potential cost savings from standardization of equipment, removal of old
+            equipment, reduce energy costs by avoiding unnecessary on-premises infrastructure</li>
+        </ul>
+        <p>3.2.3 &nbsp; To quantify these capabilities’ value, we used a formula, looking at a security budget of an
+          organization for securing its private cellular network. And the specific budget parts related to relevant
+          security infrastructure.</p>
+      </div>
+      <div class="bg2 p-5 mb-3">
+        <p class="fw-bold">Last, we defined the saving associated with OneLayer’s solution (% Year) or the % of the
+          calculated NBA that can be saved using OneLayer’s solution.
+          For this measurement (3.2), we estimate the savings that can be contributed to OneLayer’s solution, by
+          identifying and eliminating redundant devices and minimizing inventory costs. (Other parts are covered by the
+          customer’s existing security tools and services, and by some other components of the private cellular
+          ecosystem).</p>
+      </div>
+
+    </div>
+    <div class="col-lg-4">
+      <div class="roi shadow p-4 sticky-top">
+        <h3>Return on<br> Investment (ROI)</h3>
+        <h2>{{data.returnOfinvestDis}}%</h2>
+        <div class="col-7 mt-5 img_cls1" *ngIf="data.D70!=data.expectedDevice">
+          <div class="verticalLine">
+            <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions">
+            </highcharts-chart>
+            <hr style="width: 275px;" />
+            <span class="span2" *ngIf="data.returnOfinvestDis<=300">100%</span>
+            <span class="span2" *ngIf="data.returnOfinvestDis>300">300%</span>
+            <span class="span22">{{data.returnOfinvestDis}}%</span>
+            <span class="span233">{{data5Y.returnOfinvestDis5Y}}%</span>
+            <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=400">600%</span>
+            <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=600">800%</span>
+            <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=800">1000%</span>
+            <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y<400">400%</span>
+            <span class="span1">{{ ''| datePipe }}</span>
+            <span class="span3">{{ (''| datePipe)+1 }}</span>
+            <span class="span4">{{ (''| datePipe)+2 }}</span>
+            <span class="span5">{{ (''| datePipe)+3 }}</span>
+            <span class="span6">{{ (''| datePipe)+4 }}</span>
+            <span class="span7">{{ (''| datePipe)+5 }}</span>
+
+          </div>
+        </div>
+        <br />
+        <div>
+          <img class="rounded  w-100" src="assets/icons/pdf-paper.png" alt="">
+        </div>
+        <div class=" pdf-download d-flex justify-content-between align-items-center pt-3">
+          <span class="text-secondary" style="cursor: pointer;"><img src="assets/icons/pdf.svg" width="24" alt=""> PDF
+            Summary</span>
+          <span><a type="button" class="text-uppercase text-decoration-none" data-bs-toggle="modal"
+              data-bs-target="#exampleModal" data-bs-target="#exampleModal">Send Report</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <!-- <div class="send-report">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <div class="row">
+                <div class="col-md-6 p-4 ">
+                    <div class="d-flex gap-2 mb-5 align-items-cener px-3">
+                        <img src="assets/icons/pdf.svg" class="" width="30" alt="" />
+                        <h4 class="mb-0">Send PDF Report</h4>
+                    </div>
+                    <form class="pt-3 px-3" action="" method="get">
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email address:</label>
+                          <input type="email" class="form-control" id="email" placeholder="Enter Your Email " required="required">
+                        </div>
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company Name:</label>
+                            <input type="text" class="form-control" id="company" placeholder="Type company name...">
+                          </div>
+                          <div class="mb-3">
+                            <label class="picture" for="picture__input" tabIndex="0">
+                                <span class="picture__image">Drop Logo Here or &nbsp;</span>
+                                <span>choose file</span>
+                              </label>
+                            <input type="file" class="form-control" id="picture__input">
+                          </div>
+                        <button type="submit" class="btn btn-primary w-100 border-0">Submit</button>
+                      </form>
+                </div>
+                <div class="col-md-6 p-0 report-img">   
+                    <button type="button" class="btn-close float-end p-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div> -->
+</section>

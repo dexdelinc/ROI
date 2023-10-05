@@ -1,0 +1,161 @@
+<!-- <ngx-spinner>
+  <app-loader></app-loader>
+</ngx-spinner> -->
+<section class="calculator mx-auto py-4 mt-5">
+  <form [formGroup]="roiForm"  noValidate>
+    <div class="row">
+      <h1 class="mb-5">ROI Calculator</h1>
+
+      <div class="col-md-6">
+        <mat-select-country appearance="outline" label="Country" [value]="defaultValue" formControlName="country"
+          (onCountrySelected)="onCountrySelected($event)" [readonly]=true [disabled]=true>
+        </mat-select-country>
+      </div>
+      <div class="col-md-6 text-end">
+        <mat-form-field appearance="outline">
+          <mat-label>Industry</mat-label>
+          <mat-select formControlName="industry">
+            <mat-option value="Utility" selected>Utility</mat-option>
+            <mat-option value="Manufacturing" disabled>Manufacturing</mat-option>
+            <mat-option value="Oil&Gas" disabled>Oil & Gas</mat-option>
+            <mat-option value="Mining" disabled>Mining</mat-option>
+            <mat-option value="Ports/Airports" disabled>Ports/Airports</mat-option>
+            <mat-option value="Logistics/Warehouses" disabled>Logistics/Warehouses</mat-option>
+            <mat-option value="Healthcare" disabled>Healthcare</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-6">
+        <p>Number of cores:</p>
+      </div>
+      <div class="col-6">
+        <div class="d-flex justify-content-end">
+          <div class="number text-end border">
+            <span class="minus" (click)="Dec('cores')">
+              <h4 class="mb-0">-</h4>
+            </span>
+            <input class="border-0 text-end py-2 ps-3" type="number" formControlName="cores" readonly />
+            <span class="plus">
+              <h4 (click)="Inc('cores')" class="mb-0">+</h4>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-6">
+        <p>Current number of devices:</p>
+      </div>
+      <div class="col-6">
+        <div class="d-flex justify-content-end">
+          <div class="number text-end border">
+            <span class="minus" (click)="Dec('currentDevice')">
+              <h4 class="mb-0">-</h4>
+            </span>
+            <input class="border-0 text-end py-2 ps-3" type="number" formControlName="currentDevice" readonly />
+            <span class="plus">
+              <h4 class="mb-0" (click)="Inc('currentDevice')">+</h4>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-6">
+        <p>Expected number of devices in 5 Years:</p>
+      </div>
+      <div class="col-6">
+        <div class="d-flex justify-content-end">
+          <div class="number text-end border">
+            <span class="minus" (click)="Dec('expectedDevice')">
+              <h4 class="mb-0">-</h4>
+            </span>
+            <input class="border-0 text-end py-2 px-3" type="text" value="1000000" formControlName="expectedDevice"
+              readonly />
+            <span class="plus">
+              <h4 class="mb-0" (click)="Inc('expectedDevice')">+</h4>
+            </span>
+          </div>
+        </div>
+      </div>
+      <span class="alert-danger" *ngIf="match">Expected number of Devices in 5 Years should be more than Current number
+        of devices!</span>
+
+    </div>
+    <div class="row">
+      <!-- <div class="col-6">
+        <button class="w-100 btn btn-calc text-uppercase text-white py-2" (click)="onCalcultor5Y()">
+        Calculate In 5Y
+      </button></div> -->
+      <div class="col-12">
+        <button class="w-100 btn btn-calc text-uppercase text-white py-2" (click)="onCalcultor1Y()">
+          Calculate
+        </button>
+      </div>
+    </div>
+  
+    
+  </form>
+  <div class="row graph">
+    <div class="col-5">
+      <div class="mt-3 p-4">
+        <h2>
+          Return on <br />
+          Investment <br />
+          (ROI)
+        </h2>
+        <h3 class="percent"><span>{{rtnofInvestDis}}</span>%</h3>
+      </div>
+    </div>
+    <div class="col-7 mt-5 img_cls1">
+      <div class="verticalLine">
+        <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions" *ngIf="showImg">
+        </highcharts-chart>
+        <hr />
+        <span class="span2" *ngIf="rtnofInvestDis<=300">100%</span>
+        <span class="span2" *ngIf="rtnofInvestDis>300">300%</span>
+        <span class="span22">{{rtnofInvestDis}}%</span>
+        <span class="span233">{{rtnofInvestDis5Y}}%</span>
+        <span class="span23" *ngIf="rtnofInvestDis5Y>=400">600%</span>
+        <span class="span23" *ngIf="rtnofInvestDis5Y>=600">800%</span>
+        <span class="span23" *ngIf="rtnofInvestDis5Y>=800">1000%</span>
+        <span class="span23" *ngIf="rtnofInvestDis5Y<400">400%</span>
+        <span class="span1">{{ ''| datePipe }}</span>
+        <span class="span3">{{ (''| datePipe)+1 }}</span>
+        <span class="span4">{{ (''| datePipe)+2 }}</span>
+        <span class="span5">{{ (''| datePipe)+3 }}</span>
+        <span class="span6">{{ (''| datePipe)+4 }}</span>
+        <span class="span7">{{ (''| datePipe)+5 }}</span>
+
+      </div>
+    </div>
+  </div>
+
+  <br><br><br>
+  <div class="col-12">
+    <p class="border-bottom fw-bold">Credits:</p>
+    <div class="brands">
+      <div class="row">
+
+        <div class="col-3 p-3 d-flex align-items-cener justify-content-center">
+          <img class="w-75" src="assets/icons/ATEX_BIG-30d1d347 1.svg" alt="">
+        </div>
+        <div class="col-3 p-3 d-flex align-items-cener justify-content-center">
+          <img class="w-75" src="assets/icons/NOK_BIG-8604230c 1.svg" alt="">
+        </div>
+        <div class="col-3 p-3 d-flex align-items-cener justify-content-center">
+          <img class="w-75" src="assets/icons/World_Wide_Technology 1.svg" alt="">
+        </div>
+        <div class="col-3 p-3 d-flex align-items-cener justify-content-center">
+          <img class="w-75" src="assets/icons/burnsmcdonnell_blog 1.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</section>

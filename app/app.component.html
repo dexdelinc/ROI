@@ -1,0 +1,81 @@
+<ngx-spinner>
+  <app-loader></app-loader>
+</ngx-spinner>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 d-lg-block d-none p-0">
+      <div class="d-flex flex-column flex-shrink-0 text-white side-nav ">
+        <a href="/" class=" mb-3 mb-md-0 me-md-auto text-white text-decoration-none pb-4">
+          <img src="assets/icons/roi-logo.svg" alt="logo">
+          <p class="fs-4 px-4 py-3 mb-5 logo-text">Securing Private<br> Cellular Networks.</p>
+        </a>
+        <ul class="nav nav-tabs nav-pills flex-column mb-auto border-0 mt-5" id="nav">
+          <li class="nav-item" [ngClass]="{'active': tab === 'tab1'}">
+            <a routerLink="roi-calculator" routerLinkActive="active" class="nav-link " aria-current="page"
+              (click)='onChange(1)'>
+              ROI Calculator
+            </a>
+          </li>
+          <li [ngClass]="{'active': tab==='tab2'}">
+            <a routerLink="bav-overview" routerLinkActive="active" class="nav-link" (click)='onChange(2)'>
+              ROI Overview
+            </a>
+          </li>
+          <li [ngClass]="{'active': tab==='tab3'}">
+            <a routerLink="cyber-manger" routerLinkActive="active" class="nav-link text-white d-flex"
+              (click)='onChange(3)'>
+              <span class="mx-2">1. </span>
+              <p>Cybersecurity Management Efficiency and Effectiveness</p>
+            </a>
+          </li>
+          <li [ngClass]="{'active': tab==='tab4'}">
+            <a routerLink="optimize-opr" routerLinkActive="active" class="nav-link text-white d-flex"
+              (click)='onChange(4)'>
+              <span class="mx-2">2. </span>
+              <p>Optimize Operations and Performance Management</p>
+            </a>
+          </li>
+          <li [ngClass]="{'active': tab==='tab5'}">
+            <a routerLink="inc-supply" routerLinkActive="active" class="nav-link text-white d-flex"
+              (click)='onChange(5)'>
+              <span class="mx-2">3. </span>
+              <p>Increase Supply Chain Speed Efficiency</p>
+            </a>
+          </li>
+          <li [ngClass]="{'active': tab==='tab6'}">
+            <a routerLink="dev-specialized" routerLinkActive="active" class="nav-link text-white d-flex"
+              (click)='onChange(6)'>
+              <span class="mx-2">4. </span>
+              <p>Develop Specialized Organizational Knowledge and Skills</p>
+            </a>
+          </li>
+          <li [ngClass]="{'active': tab==='tab7'}">
+            <a routerLink="simplify-reg" routerLinkActive="active" class="nav-link text-white d-flex"
+              (click)='onChange(7)'>
+              <span class="mx-2">5. </span>
+              <p>Simplify Regulatory Compliance</p>
+            </a>
+          </li>
+          <li [ngClass]="{'active': router.isActive('/market-avg',false)}">
+            <a routerLink="market-avg" class="nav-link text-white d-flex"
+              (click)='onChange(8)'>
+              <p>Market Averages</p>
+            </a>
+          </li>
+        </ul>
+        <hr class="mx-3">
+        <ul class="nav nav-tabs nav-pills flex-column mb-auto border-0 mt-5" id="nav">
+          <li class="nav-item" [ngClass]="{'active': tab==='tab9'}">
+            <a routerLink="credits" routerLinkActive="active" class="nav-link " aria-current="page"
+              (click)='onChange(9)'>
+              Credit
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-9 ">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

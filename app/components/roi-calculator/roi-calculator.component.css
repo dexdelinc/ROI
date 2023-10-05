@@ -1,0 +1,143 @@
+.calculator {
+    width: 675px;
+}
+
+
+.btn-calc {
+    background: linear-gradient(268.78deg, #FF4801 9.32%, #FF8556 98.39%);
+    height: 48px;
+}
+
+.minus,
+.plus {
+    width: 18px;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.calculator .number {
+    width: 179px;
+}
+
+.calculator .number input {
+    width: 140px;
+}
+.calculator p{
+    font-size: 16px;
+    font-weight: 500;
+}
+.calculator form h1,
+.percent {
+    font-size: 48px;
+}
+.calculator .graph{
+    height: 282px;
+    width: 674px;
+    padding-top: 20px;
+}
+.calculator .graph h2 {
+    color: #004734;
+}
+
+.graph .percent {
+    color: rgba(255, 72, 1, 1) !important;
+    font-size: 48px;
+}
+
+.forword {
+    float: right;
+}
+.img_cls1 {
+    position: relative;
+}
+.img_cls1 img {
+    max-width: 300px;
+    padding-left: 20px;
+}
+span.span1 {
+    position: absolute;
+    top: 218px;
+    left: 13px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+span.span3 {
+    position: absolute;
+    top: 218px;
+    left: 68px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+span.span4 {
+    position: absolute;
+    top: 218px;
+    left: 123px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+span.span5 {
+    position: absolute;
+    top: 218px;
+    left: 183px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+span.span6 {
+    position: absolute;
+    top: 218px;
+    left: 243px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+span.span7 {
+    position: absolute;
+    top: 218px;
+    left: 290px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+
+.img_cls1 span.span2 {
+    position: absolute;
+    bottom: 8px;
+    left: -20px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+.img_cls1 span.span22 {
+    position: absolute;
+    bottom: 40px;
+    left: -20px;
+    color: rgba(255, 72, 1, 1) !important;
+    font-size: 12px;
+}
+.img_cls1 span.span23 {
+   
+    position: absolute;
+    top: -7px;
+    left: -20px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+.img_cls1 span.span233 {
+    position: absolute;
+    bottom: 175px;
+    left: -20px;
+    font-size: 10px;
+    color: rgba(255, 72, 1, 1) !important;
+
+}
+.graph h2 {
+    padding: 40px 0px 15px;
+    font-size: 30px;
+}
+hr{
+    width: 85%;
+}
+.verticalLine {
+    border-left: thin solid #8D8D8D;
+    color: var(--grey-500, #9E9E9E);
+  }
+  

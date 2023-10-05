@@ -1,0 +1,169 @@
+<ngx-spinner>
+    <app-loader></app-loader>
+</ngx-spinner>
+<section class="market-average py-lg-5 p-md-5 p-lg-0">
+    <div class="row">
+        <div class="col-lg-8 pe-lg-5">
+            <div class="market-heading mb-5">
+                <h1 class="mb-4">Market Averages</h1>
+                <p>OneLayer makes it easy to extend existing enterprise security tools and practices into the cellular
+                    domain. This includes enhanced visibility, threat prevention, zero-trust segmentation to prevent
+                    lateral movement, and geo-fencing of sensitive cellular devices.</p>
+            </div>
+
+
+            <div class="market-calculate">
+                <form class="border-bottom border-top py-4" [formGroup]="marketForm" noValidate>
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td>Estimated Cost of Downtime per Hour</td>
+                                <td class="d-flex justify-content-end">
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent" id="basic-addon1">$</span>
+                                        <input type="number" class="form-control" placeholder="300,000"
+                                            formControlName="D74" (change)="onchange($event.target)">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Average Number Hours for Security Breach</td>
+                                <td class="d-flex justify-content-end">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" placeholder="8" formControlName="D75"
+                                            (change)="onchange($event.target)">
+                                        <span class="input-group-text bg-transparent" id="basic-addon1">h</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Average Number Hours for SLA</td>
+                                <td class="d-flex justify-content-end">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" placeholder="4.38"
+                                            formControlName="D76" (change)="onchange($event.target)">
+                                        <span class="input-group-text bg-transparent" id="basic-addon1">h</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Average Regulatory Violation Cost</td>
+                                <td class="d-flex justify-content-end">
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent" id="basic-addon1">$</span>
+                                        <input type="number" class="form-control" placeholder="2,666,667"
+                                            formControlName="D77" (change)="onchange($event.target)">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Average Cost of Data Breach</td>
+                                <td class="d-flex justify-content-end">
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent" id="basic-addon1">$</span>
+                                        <input type="number" class="form-control" placeholder="9,440,000"
+                                            formControlName="D78" (change)="onchange($event.target)">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <button class="btn reset text-uppercase" type="submit"
+                    (click)="onSubmit()">recalculate</button>
+                <button class="btn reset text-uppercase" (click)="reset()">reset to defaults</button>
+            </div>
+
+
+        </div>
+        <div class="col-lg-4 mt-4">
+            <div class="roi shadow p-4">
+                <h3>Return on<br> Investment (ROI)</h3>
+                <h2>{{data.returnOfinvestDis}}{{percent}}</h2>
+                <!-- <div class="col-6 mt-5 img_cls1" *ngIf="data.D70!=data.expectedDevice">
+
+                    <span class="span2">{{data.returnOfinvestDis}}{{percent}}</span>
+                        
+                </div> -->
+                <div class="col-7 mt-5 img_cls1" *ngIf="data.D70!=data.expectedDevice">
+                    <div class="verticalLine">
+                        <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions">
+                        </highcharts-chart>
+                        <hr style="width: 275px;" />
+                        <span class="span2" *ngIf="data.returnOfinvestDis<=300">100%</span>
+                        <span class="span2" *ngIf="data.returnOfinvestDis>300">300%</span>
+                        <span class="span22">{{data.returnOfinvestDis}}%</span>
+                        <span class="span233">{{data5Y.returnOfinvestDis5Y}}%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=400">600%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=600">800%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=800">1000%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y<400">400%</span>
+                        <span class="span1">{{ ''| datePipe }}</span>
+                        <span class="span3">{{ (''| datePipe)+1 }}</span>
+                        <span class="span4">{{ (''| datePipe)+2 }}</span>
+                        <span class="span5">{{ (''| datePipe)+3 }}</span>
+                        <span class="span6">{{ (''| datePipe)+4 }}</span>
+                        <span class="span7">{{ (''| datePipe)+5 }}</span>
+
+                    </div>
+                </div>
+                <br />
+
+                <div>
+                    <img class="rounded  w-100" src="assets/icons/pdf-paper.png" alt="">
+                </div>
+                <br>
+                <div class=" pdf-download d-flex justify-content-between">
+                    <span class="text-secondary" style="cursor: pointer;"><img src="assets/icons/pdf.svg" width="24"
+                            alt=""> PDF Summary</span>
+                    <span><a type="button" class="text-uppercase text-decoration-none" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" data-bs-target="#exampleModal">Send Report</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--modal -->
+    <!-- <div class="send-report">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <div class="row">
+                <div class="col-md-6 p-4 ">
+                    <div class="d-flex gap-2 mb-5 align-items-cener px-3">
+                        <img src="assets/icons/pdf.svg" class="" width="30" alt="" />
+                        <h4 class="mb-0">Send PDF Report</h4>
+                    </div>
+                    <form class="pt-3 px-3" action="" method="get">
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email address:</label>
+                          <input type="email" class="form-control" id="email" placeholder="Enter Your Email " required="required">
+                        </div>
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company Name:</label>
+                            <input type="text" class="form-control" id="company" placeholder="Type company name...">
+                          </div>
+                          <div class="mb-3">
+                            <label class="picture" for="picture__input" tabIndex="0">
+                                <span class="picture__image">Drop Logo Here or &nbsp;</span>
+                                <span>choose file</span>
+                              </label>
+                            <input type="file" class="form-control" id="picture__input">
+                          </div>
+                        <button type="submit" class="btn btn-primary w-100 border-0">Submit</button>
+                      </form>
+                </div>
+                <div class="col-md-6 p-0 report-img">   
+                    <button type="button" class="btn-close float-end p-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div> -->
+</section>

@@ -1,0 +1,59 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.side-nav{
+   background: url('../assets/icons/side-nav.jpg'); 
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: fixed;
+    width: 315px;
+    overflow: auto;
+    height: 100%;
+}
+.side-nav::-webkit-scrollbar { 
+width: 0 !important;
+display: none; 
+}
+.side-nav .logo-text{
+font-weight: 500;
+font-size: 20px !important;
+line-height: 24px;
+/* or 120% */
+}
+.side-nav .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+color: #004734 !important;
+border-radius: 0;
+background-color: #FFFFFF;
+opacity: 0.8;
+}
+.side-nav a.nav-link {
+padding:10px 20px;
+color: #fff;
+}
+.side-nav ul li p{
+margin-bottom: 0;
+}
+.side-nav ul li {
+margin-bottom: 5px;
+}
+.nav-pills .nav-link:hover {
+background: #fff;
+color: #004734 !important;
+opacity: 0.8;
+border-radius: 0;
+}
+.active a{
+    background: #fff;
+    color: #004734 !important;
+    opacity: 0.8;
+    border-radius: 0;
+}
+/* .highlighted {
+    display: block !important;
+   } */
+   .mob{
+     color: white;
+     border-color: #aa2704 !important  ;  
+   }
+ 
+   

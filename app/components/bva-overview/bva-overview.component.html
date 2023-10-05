@@ -1,0 +1,403 @@
+<!-- <ngx-spinner>
+    <app-loader></app-loader>
+</ngx-spinner> -->
+<section class="bva">
+    <div class="row" id="htmlData" #htmlData>
+        <div class="col-lg-8 pe-lg-5 pt-3 custom-pe">
+            <div class="togglebtn p-2 rounded d-flex align-items-center justify-content-between">
+                <span class="text-uppercase  ">Show Saving</span>
+                <div class="btn-group rounded float-end p-1" role="group" aria-label="Basic example">
+                    <button type="button" class="btn text-uppercase" [class.active]="type === 1"
+                        (click)="toggleDuration(1)">
+                        1 Year
+                    </button>
+                    <button type="button" class="btn text-uppercase" [class.active]="type === 5"
+                        (click)="toggleDuration(5)">
+                        5 Years
+                    </button>
+                </div>
+
+            </div>
+            <div class="py-5 Overview-content">
+                <h1 class="mb-3">Business Value Assessment Overview</h1>
+                <p class="">OneLayer makes it easy to extend existing enterprise security tools and practices into the
+                    cellular domain. This includes enhanced visibility, threat prevention, zero-trust segmentation to
+                    prevent lateral movement, and geo-fencing of sensitive cellular devices.</p>
+            </div>
+            <div class="container px-0 mb-4">
+                <h2>Average Cost Reduction</h2>
+                <br />
+                <div class="row">
+                    <div class="col-md-4 col-6 mb-4" *ngFor="let item of items">
+                        <div class="progress-spinner-container mb-4">
+                            <mat-progress-spinner [strokeWidth]="14" [mode]="'determinate'"
+                                [value]="item.value * (animationState === 'filled' ? 1 : 0)" [@fillAnimation]>
+                            </mat-progress-spinner>
+                            <div class="width-text position-absolute h6 mb-0">{{item.value}}%</div>
+                        </div>
+
+                        <div class="">{{item.text}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="management mb-5 table-responsive">
+                <i class="bi bi-laptop"></i>
+                <h4>1. Cybersecurity Management</h4>
+                <table class="table table-borderless border-bottom table align-middle">
+                    <thead>
+                        <tr>
+                            <th>Measuarement</th>
+                            <th class="text-end x" *ngIf="type===1">Saving in 1 Year</th>
+                            <th class="text-end x" *ngIf="type===5">Saving in 5 Years</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">1.1 </span>
+                                <a (click)="openDialog(['cm1_1_1',
+                                'cm1_1_2',
+                                'cm1_1_3',])">End-to-end Visibility, Micro-Segmentation, Geolocation, Improved
+                                    Detection, and Threat Prevention</a>
+                            </td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G8}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span> {{data.E8}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">1.2 </span><a (click)="openDialog([])">Increased
+                                    Security Operations Productivity</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G10}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span> {{data.E10}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">1.3 </span><a (click)="openDialog([])">Reduced
+                                    Incident Management Effort</a></td>
+                            <td class="text-end x" ><span class="float-start">$</span> {{data.G12}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span> {{data.E12}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">1.4 </span><a (click)="openDialog([])">Cost Avoidance
+                                    of a Security Breach</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G14}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span> {{data.E14}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">1.5 </span><a (click)="openDialog([])">Simplified
+                                    Security Management</a></td>
+                            <td class="text-end x" ><span class="float-start">$</span> {{data.G16}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span> {{data.E16}}</td> -->
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total benefits</td>
+                            <td class="text-end h4"><span class="float-start">$</span> {{data.G18}}
+                            </td>
+                            <!-- <td class="text-end h4" *ngIf="type===5"><span class="float-start">$</span>{{data.G17}}</td> -->
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="management table-responsive mb-5">
+                <h4>2. Operations and Performance Management</h4>
+                <table class="table table-borderless border-bottom">
+                    <thead>
+                        <tr>
+                            <th>Measuarement</th>
+                            <th class="text-end x" *ngIf="type===1">Saving in 1 Year</th>
+                            <th class="text-end x" *ngIf="type===5">Saving in 5 Years</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">2.1 </span><a>Increased Uptime/Enhanced Fault Finding
+                                    Capabilities</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G23}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span>{{data.E23}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">2.2 </span><a>Enhanced Network Performance</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G25}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span>{{data.E25}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">2.3 </span><a>Improved Ability to Automate</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G27}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span>{{data.E27}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">2.4 </span><a>Minimized Operations and Maintenance
+                                    (O&M) Cost</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G29}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span>{{data.E29}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">2.5 </span><a>Reduced Expansion Cost / Improved
+                                    Ability to Scale</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G31}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span>{{data.E31}}</td> -->
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total benefits</td>
+                            <td class="text-end h4"><span class="float-start">$</span> {{data.G33}}
+                            </td>
+                            <!-- <td class="text-end h4" *ngIf="type===5"><span class="float-start">$</span>{{data.G32}}</td> -->
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="management table-responsive mb-5">
+                <h4>3. Supply Chain</h4>
+                <table class="table table-borderless border-bottom">
+                    <thead>
+                        <tr>
+                            <th>Measuarement</th>
+                            <th class="text-end x" *ngIf="type===1">Saving in 1 Year</th>
+                            <th class="text-end x" *ngIf="type===5">Saving in 5 Years</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">3.1 </span><a>Asset Management / Improved Inventory
+                                    Management</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G38}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span> {{data.E38}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">3.2 </span><a>Minimized Sunk Material Cost</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G40}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span> {{data.E40}}</td> -->
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total benefits</td>
+                            <td class="text-end h4"><span class="float-start">$</span> {{data.G42}}
+                            </td>
+                            <!-- <td class="text-end h4" *ngIf="type===5"><span class="float-start">$</span> {{data.G41}}
+                            </td> -->
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="management table-responsive mb-5">
+                <h4>4. Knowledge Management</h4>
+                <table class="table table-borderless border-bottom">
+                    <thead>
+                        <tr>
+                            <th>Measuarement</th>
+                            <th class="text-end x" *ngIf="type===1">Saving in 1 Year</th>
+                            <th class="text-end x" *ngIf="type===5">Saving in 5 Years</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">4.1 </span><a>Reduced Direct Staffing Requirements</a>
+                            </td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G47}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span> {{data.E47}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">4.2 </span><a>Reduced 3rd Party Consultancy
+                                    Services</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G49}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span> {{data.E49}}</td> -->
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total benefits</td>
+                            <td class="text-end h4" ><span class="float-start">$</span> {{data.G51}}
+                            </td>
+                            <!-- <td class="text-end h4" *ngIf="type===5"><span class="float-start">$</span> {{data.G50}}
+                            </td> -->
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="management table-responsive mb-5">
+                <h4>5. Regulation and Compliance</h4>
+                <table class="table table-borderless border-bottom">
+                    <thead>
+                        <tr>
+                            <th>Measuarement</th>
+                            <th class="text-end x" *ngIf="type===1">Saving in 1 Year</th>
+                            <th class="text-end x" *ngIf="type===5">Saving in 5 Years</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">5.1 </span><a>Ensured Compliance with Regulators and
+                                    Standards (Non-Data Specific)</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G56}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span>{{data.E56}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">5.2 </span><a>Reduced Consultancy Audit Costs and
+                                    In-House Personnel</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G58}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span>{{data.E58}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">5.3 </span><a>Affirmed Traceability to Service Level
+                                    Agreement (SLAs)</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G60}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span>{{data.E60}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="d-flex"><span class="pr-2">5.4 </span><a>Improved Privacy and Data Management
+                                    (Data Specific)</a></td>
+                            <td class="text-end x"><span class="float-start">$</span> {{data.G62}}</td>
+                            <!-- <td class="text-end x" *ngIf="type===5"><span class="float-start">$</span>{{data.G62}}</td> -->
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total benefits</td>
+                            <td class="text-end h4"><span class="float-start">$</span> {{data.G64}}
+                            </td>
+                            <!-- <td class="text-end h4" *ngIf="type===5"><span class="float-start">$</span> {{data.G63}}
+                            </td> -->
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="management table-responsive mb-5">
+                <h4>BVA basics</h4>
+                <table class="table table-borderless border-bottom">
+                    <tbody>
+                        <tr>
+                            <td><a>Country</a></td>
+                            <td class="text-end text-dark">{{this.data.country}}</td>
+                        </tr>
+                        <tr>
+                            <td><a>Industry</a></td>
+                            <td class="text-end text-dark">{{this.data.industry}}</td>
+                        </tr>
+                        <tr>
+                            <td><a>Number of cores</a></td>
+                            <td class="text-end text-dark">{{this.data.D71}}</td>
+                        </tr>
+                        <tr>
+                            <td><a>Current number of devices:</a></td>
+                            <td class="text-end text-dark">{{this.data.D70}}</td>
+                        </tr>
+                        <tr>
+                            <td><a>Expected number of Devices in 5 Years</a></td>
+                            <td class="text-end text-dark">{{data.expectedDevice}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="roi p-4 mt-5 shadow ">
+                <h3>Return on<br> Investment (ROI)</h3>
+                <h2>{{rtnofInvestDis}}% </h2>
+                <div class=" mt-5 img_cls1" *ngIf="currentDevice!=data.expectedDevice">
+                    <div class="verticalLine">
+                        <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions">
+                        </highcharts-chart>
+                        <hr class="mb-0">
+                        <span class="span2" *ngIf="rtnofInvestDis<=300">100%</span>
+                        <span class="span2" *ngIf="rtnofInvestDis>300">300%</span>
+                        <span class="span22">{{rtnofInvestDis}}%</span>
+                        <span class="span233">{{data5Y.returnOfinvestDis5Y}}%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=400">600%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=600">800%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y>=800">1000%</span>
+                        <span class="span23" *ngIf="data5Y.returnOfinvestDis5Y<400">400%</span>
+                        <div class="d-flex justify-content-between">
+                            <span class="span1">{{ ''| datePipe }}</span>
+                            <span class="span3">{{ (''| datePipe)+1 }}</span>
+                            <span class="span4">{{ (''| datePipe)+2 }}</span>
+                            <span class="span5">{{ (''| datePipe)+3 }}</span>
+                            <span class="span6">{{ (''| datePipe)+4 }}</span>
+                            <span class="span7">{{ (''| datePipe)+5 }}</span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <br />
+                <br />
+                <div>
+                    <img class="rounded  w-100" src="assets/icons/pdf-paper.png" alt="">
+                </div>
+                <br>
+                <div class=" pdf-download d-flex justify-content-between">
+                    <span class="text-secondary" style="cursor: pointer;" ><img src="assets/icons/pdf.svg" width="24"
+                            alt=""> PDF Summary</span>
+
+                    <span><a type="button" class="text-uppercase text-decoration-none" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" data-bs-target="#exampleModal">Send Report</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="send-report">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-0">
+                        <div class="row">
+                            <div class="col-md-6 p-4 ">
+                                <div class="d-flex gap-2 mb-5 align-items-cener px-3">
+                                    <img src="assets/icons/pdf.svg" class="" width="30" alt="" />
+                                    <h4 class="mb-0">Send PDF Report</h4>
+                                </div>
+                                <form class="pt-3 px-3" [formGroup]="emailForm" method="get" (ngSubmit)="sendEmail()">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email address:</label>
+                                        <input type="email" formControlName="email" class="form-control" id="email"
+                                            placeholder="Enter Your Email" required="required"
+                                            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['email'].errors['required']">*Email is required</div>
+                                            <div *ngIf="f['email'].errors['email']">*Email must be a valid email address
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="company" class="form-label">Company Name:</label>
+                                        <input type="text" formControlName="company" class="form-control" id="company"
+                                            placeholder="Type company name..."
+                                            [ngClass]="{ 'is-invalid': submitted && f['company'].errors }">
+                                        <div *ngIf="submitted && f['company'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['company'].errors['required']">*Company Name is required</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+                                        <input type="file" class="form-control" id="picture__input" (change)="onFileSelected($event)" #fileInput>
+
+                                        <label class="picture" for="picture__input" tabIndex="0">
+                                            <span class="picture__image">Drop Logo Here or &nbsp;</span>
+                                            <span>choose file</span>
+                                        </label>
+                                      
+                                        <div *ngIf="selectedFile">
+                                            <h4>Selected File:</h4>
+                                            <p>{{ selectedFile.name }}</p>
+                                          </div>
+                                    </div>
+                                      
+                                    <button type="submit"
+                                        class="btn btn-primary w-100 border-0">Submit</button>
+                                </form>
+                            </div>
+                            <div class="col-md-6 p-0 report-img">
+                                <button type="button" #closebutton class="btn-close float-end p-4" data-bs-dismiss="modal"
+                                    aria-label="Close" (click)="onClose()"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

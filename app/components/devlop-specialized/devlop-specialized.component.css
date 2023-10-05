@@ -1,0 +1,147 @@
+.bg1{
+    background: #ededed;
+}
+.bg1 p:before {
+    content: '';
+    width: 15px;
+    height: 2px;
+    background: black;
+    display: block;
+    position: relative;
+    left: -20px;
+    top: 10px;
+}
+.index:after {
+    margin: 24px 0;
+    content: '';
+    width: 50px;
+    height: 1.5px;
+    display: block;
+    background: #000;
+}
+.bg2{
+    background: rgba(255, 72, 1, 0.08);
+}
+.table-of-content table tr td:last-child a{
+    color: #FF4801;
+    text-decoration: none;
+}
+.content h4{
+    color: #004734;
+}
+.roi h3{
+    color: rgba(0, 71, 52, 1);
+}
+.roi h2{
+    color: rgba(255, 72, 1, 1);
+    font-size: 48px;
+}
+.pdf-download a{
+    color: rgba(255, 72, 1, 1);
+    font-weight: 500;
+}
+.img_cls1 {
+    position: relative;
+}
+
+.img_cls1 img {
+    max-width: 300px;
+    padding-left: 20px;
+}
+
+span.span1 {
+    position: absolute;
+    top: 218px;
+    left: 40px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+
+span.span3 {
+    position: absolute;
+    top: 218px;
+    left: 90px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+
+span.span4 {
+    position: absolute;
+    top: 218px;
+    left: 143px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+
+span.span5 {
+    position: absolute;
+    top: 218px;
+    left: 200px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+
+span.span6 {
+    position: absolute;
+    top: 218px;
+    left: 265px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+
+span.span7 {
+    position: absolute;
+    top: 218px;
+    left: 300px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+
+.img_cls1 span.span2 {
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+
+.img_cls1 span.span22 {
+    position: absolute;
+    bottom: 22px;
+    left: 10px;
+    color: rgba(255, 72, 1, 1) !important;
+    font-size: 10px;
+}
+.img_cls1 span.span23 {
+   
+    position: absolute;
+    top: -7px;
+    left: 10px;
+    font-size: 10px;
+    color: var(--grey-500, #9E9E9E);
+}
+
+.img_cls1 span.span233 {
+    position: absolute;
+    bottom: 175px;
+    left: 10px;
+    font-size: 10px;
+    color: rgba(255, 72, 1, 1) !important;
+
+}
+
+
+.graph h2 {
+    padding: 40px 0px 15px;
+    font-size: 30px;
+}
+
+hr {
+    width: 85%;
+}
+
+.verticalLine {
+    border-left: thin solid #8D8D8D;
+    color: var(--grey-500, #9E9E9E);
+    margin-left: 50px;
+}
